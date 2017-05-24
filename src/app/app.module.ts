@@ -17,8 +17,11 @@ import {FormComponent} from './account/form.component';
     imports:      [ BrowserModule , FormsModule,
                     
                     RouterModule.forRoot([
-                                          
+                                          {path: '', redirectTo: '/mapGame' , pathMatch: 'full'},
+//                                          {path: 'rules', redirectTo : '/rules', pathMatch: 'full'},
                                           {path: 'rules', component : RulesComponent},
+                                          {path: 'newAccount', component : FormComponent},
+                                          {path: 'mapGame', component : TilesMapComponent}
                                           ])
                                           ],
                                           

@@ -1,11 +1,5 @@
-<!-- <div class = "map" *ngFor= "let tiles of map.map"> -->
-<!-- 	<ng-container *ngFor="let tile of tiles"> -->
-<!-- 	    <div [ngClass]="tile.getClass()" [ngStyle]="{'background-color': tile.color}"> </div> -->
-<!-- 	</ng-container> -->
-<!-- </div> -->
 
-
-<div *ngFor="let tiles of map.map" style="display: inline-block;">
+<div *ngFor="let tiles of map.map" style="display: inline-block;" [routerLink]="mapGame">
 	<ng-container *ngFor="let tile of tiles">
 	    <div [ngClass]="tile.getClass()" [ngStyle]="{'background-color': tile.color}"> </div>
    </ng-container>
