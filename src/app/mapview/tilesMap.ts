@@ -212,7 +212,7 @@ getWinner(): string{
     if(index == 2)
         return "Bleus";
     if(index == 3)
-        return "Orange";
+        return "Oranges";
     
 }
 }
