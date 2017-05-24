@@ -12,21 +12,22 @@ import { TilesMap } from "./tilesMap";
 export class TilesMapComponent implements OnInit {
     
     map: TilesMap;
-
+    size = 32;
+    winner = "";
+    
 ngOnInit(): void {
-    var size = 32;
-    this.map = new TilesMap(size);
+    this.map = new TilesMap(this.size);
     var o = new ObjectOnMap(0 , 0, "blue");
-    var o1 = new ObjectOnMap(size-1 , size-1, "blue");
+    var o1 = new ObjectOnMap(this.size-1 , this.size-1, "blue");
     
     var o2 = new ObjectOnMap(0, 1, "red");
-    var o3 = new ObjectOnMap(size-1 , size-2, "red");
+    var o3 = new ObjectOnMap(this.size-1 , this.size-2, "red");
     
-    var o4 = new ObjectOnMap(size-1 , 0, "green");
-    var o5 = new ObjectOnMap(0 , size-1, "green");
+    var o4 = new ObjectOnMap(this.size-1 , 0, "green");
+    var o5 = new ObjectOnMap(0 , this.size-1, "green");
     
-    var o6 = new ObjectOnMap(size-2 , 0, "orange")
-    var o7 = new ObjectOnMap(0 , size-2, "orange")
+    var o6 = new ObjectOnMap(this.size-2 , 0, "orange")
+    var o7 = new ObjectOnMap(0 , this.size-2, "orange")
     
     
     this.map.addObject(o);
@@ -37,19 +38,24 @@ ngOnInit(): void {
     this.map.addObject(o5);
     this.map.addObject(o6);
     this.map.addObject(o7);
-    this.check();
 }
 
 sleep(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 async check() {
-    while(true){
+    
+    var run = true;
+    while(run){
+        if(this.map.objects.length == this.size*this.size){
+            run = false;
+            this.winner = this.map.getWinner();
+        }
         this.map.mapShot();
         this.map.moveObjects();
         await this.sleep(100);
     }
+    
 }
-
 
 }

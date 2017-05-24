@@ -1,6 +1,24 @@
+<div  style="display:block;" >
+	<div style="float:right; margin-right: 350px" >
+		<button type="button" id="bouton" class="btn btn-danger"
+			(click)="check()">Start</button>
+		<div>Cases restantes : {{1024-map.objects.length}}</div>
+		<div style="color: red">Rouges: {{map.nbRed}}</div>
+		<div style="color: blue">Bleus: {{map.nbBlue}}</div>
+		<div style="color: green">Verts: {{map.nbGreen}}</div>
+		<div style="color: orange">Oranges: {{map.nbOrange}}</div>
+	</div>
 
-<div *ngFor="let tiles of map.map" style="display: inline-block;" [routerLink]="mapGame">
-	<ng-container *ngFor="let tile of tiles">
-	    <div [ngClass]="tile.getClass()" [ngStyle]="{'background-color': tile.color}"> </div>
-   </ng-container>
+	<div style="margin-left: auto; margin-right: auto; width: 660px">
+		<div *ngFor="let tiles of map.map" style="display: inline-block;"
+			[routerLink]="mapGame">
+			<ng-container *ngFor="let tile of tiles">
+			<div [ngClass]="tile.getClass()"
+				[ngStyle]="{'background-color': tile.color}"></div>
+			</ng-container>
+		</div>
+	</div>
+	
+	<div style="font-size: 25px;text-align:center;">{{"Les gagnants sont les " + winner}}</div>
+	
 </div>

@@ -8,6 +8,11 @@ export class TilesMap {
 map: Tile[][];
 objects: Array<ObjectOnMap>;
 
+nbRed = 0;
+nbGreen = 0;
+nbBlue = 0;
+nbOrange = 0;
+
 
 constructor(size: number) {
     this.size = size;
@@ -24,6 +29,14 @@ constructor(size: number) {
 
 addObject(o: ObjectOnMap): void{
     this.objects.push(o);
+    if(o.color == "red")
+        this.nbRed+=1;
+    if(o.color == "blue")
+        this.nbBlue+=1;
+    if(o.color == "green")
+        this.nbGreen+=1;
+    if(o.color == "orange")
+        this.nbOrange+=1;
 }
 
 supprObject(coordX: number, coordY: number): void {
@@ -173,9 +186,33 @@ mapShot(){
     this.cleanMap();
     for(var i = 0; i < this.objects.length; i++){
         this.map[this.objects[i].posX][this.objects[i].posY].setObject(this.objects[i].color);
-        
     }
 }
 
+compare(a: number, b:number) {
+    if (a < b)
+       return -1;
+    if (a > b)
+       return 1;
+    return 0;
+  }
 
+getWinner(): string{
+    var t = [this.nbRed, this.nbGreen, this.nbBlue, this.nbOrange];
+    var index = 0;
+    for(var i = 1; i < t.length; i++){
+        if(t[i] > t[index])
+            index =i;
+    }
+    
+    if(index == 0)
+        return "Rouges";
+    if(index == 1)
+        return "Verts";
+    if(index == 2)
+        return "Bleus";
+    if(index == 3)
+        return "Orange";
+    
+}
 }
