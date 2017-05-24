@@ -1,6 +1,6 @@
 <div class="container">
-<h1>Formulaire Joueur, tu dois t'inscrire !!!!</h1> 
-<!-- <h2>coucou</h2>  -->
+<h1>Futur looser, tu dois t'inscrire !!!!</h1> 
+
 <!-- 	<form #f="ngForm" (ngSubmit)="onSubmit(f.value)"> -->
 
 		<div class="form-group">
@@ -12,13 +12,18 @@
 		</div>
 		<br>
 
-		<div class="form-group">
-			<label for="familyname">Quel est ton Nom ? </label> <input
-				id="familyname" type="text" class="form-control" required
+		<div id = "familyNameForm" class="form-group">
+			<label for="familyname">Quel est ton Nom ? </label> 
+			<input	id="familyname" type="text" class="form-control" required
 				[(ngModel)]="user.familyname" name="familyName"
-				#familyname="ngModel"> <span
-				[hidden]="familyname.valid || familyname.untouched"
-				class="text-danger">Vous devez entrer un nom !</span>
+				#familyname="ngModel">
+				<span
+				[hidden]="familyname.valid || familyname.untouched" class="text-danger">Vous
+				devez entrer un nom ! </span>
+				
+<!-- 			<div *ngIf="familyname.errors && (familyname.dirty || familyname.touched)" class="alert alert-danger"> -->
+<!--    				 <div [hidden]="!familyname.errors.required">Vous devez entrer un nom !</div> -->
+
 		</div>
 		<br>
 		
