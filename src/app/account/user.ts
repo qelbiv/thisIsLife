@@ -6,6 +6,5 @@ constructor(
             public familyname: string,
             public pseudo : string,
             public mail : string
-            
-            ) {}
+           ) {}
 }

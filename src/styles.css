@@ -16,3 +16,10 @@ h1 {
 	background-color: #E6E2AF;
 	border: 1px solid black;
 }
+#bouton {
+	    background-color: blue;
+}
+
+button {
+	background-color : green;
+}
