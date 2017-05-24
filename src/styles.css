@@ -5,14 +5,18 @@ h1 {
 }
 
 
-.map {
-	height: 320px;
-	width: 320px;
-}
+
 
 .tile {
 	height: 20px;
 	width: 20px;
-	background-color: #E6E2AF;
 	border: 1px solid black;
+}
+
+.tile.occupied {
+	background-color: red ;
+}
+
+.tile.unoccupied {
+	background-color: #E6E2AF;
 }
