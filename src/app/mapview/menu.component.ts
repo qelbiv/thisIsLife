@@ -1,5 +1,6 @@
-
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { RouterModule, Routes } from '@angular/router';
+import { RulesComponent } from '../rules.component';
 
 @Component({
     moduleId: module.id,
@@ -7,6 +8,6 @@ import { Component } from "@angular/core";
     templateUrl: 'menu.component.html'
 })
 
-export class MenuComponent{
-    
+export class MenuComponent {
+       
 }
