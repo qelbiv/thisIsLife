@@ -11,19 +11,33 @@ export class Tile  implements OnInit{
     }
     
     
-    occupied = false;
-    currentObject: ObjectOnMap;
+    occupied: boolean;
+    color: string;
     
+    constructor(c: string) {
+        this.occupied = false;
+        this.color = c;
+}
     
-    
-    setObject(o: ObjectOnMap): void{
-        this.currentObject = o;
-        this.occupied = true;
+    isOccupied(): boolean {
+        return this.occupied;
     }
     
-    supprObject(): void{
-        
-        this.currentObject = null;
+    setObject(color: string): void {
+        this.occupied = true;
+        this.color = color;
+    }
+    
+    supprObject(): void {
         this.occupied = false;
+        this.color ="#E6E2AF";
+    }
+    
+    getClass(): string {
+        
+        if(this.isOccupied()){
+            return "tile occupied";
+        }else
+            return "tile unoccupied";
     }
 }
