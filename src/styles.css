@@ -4,9 +4,6 @@ h1 {
   font-size: 250%;
 }
 
-
-
-
 .tile {
 	height: 20px;
 	width: 20px;
@@ -19,4 +16,18 @@ h1 {
 
 .tile.unoccupied {
 	background-color: #E6E2AF;
+}
+
+
+input.ng-invalid.ng-untouched{
+   border-color : black;
+}
+		
+input.ng-invalid.ng-dirty{
+	border-color : red; 
+	background-color: #ffd2d2;
+}
+
+input.ng-valid {
+    background-color: #d2f9d2;
 }

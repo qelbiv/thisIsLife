@@ -1,0 +1,8 @@
+eclipse.preferences.version=1
+<<<<<<< HEAD
+encoding//src/app/mapview/menu.component.html=UTF-8
+encoding//src/app/rules.component.html=UTF-8
+=======
+encoding//src/app/account/form.component.html=UTF-8
+>>>>>>> fc6106dfcc754da92da278a45e63e91faf1e6998
+encoding/<project>=UTF-8

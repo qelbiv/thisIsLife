@@ -1,0 +1,15 @@
+.bouton {
+display:block;
+width:150px;
+line-height:50px;
+text-align:center;
+vertical-align:middle;
+background-color: #4BB5C1;
+text-decoration:none;
+float:left;
+margin:2px;
+}
+
+.bar {
+	
+}
